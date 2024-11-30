@@ -50,7 +50,10 @@ const og_image = "";
 		<!-- 入会方法　ここから -->
 		<!-- 入会方法　ここまで -->
 	</main>
+
+    <script is:inline src="/node_modules/flowbite/dist/flowbite.min.js"></script>   
 	<script>
+        
 	// flowbite
 	const accordionElement = document.getElementById('accordion-example');
 
@@ -109,6 +112,8 @@ import { Accordion } from 'flowbite';
 * options (optional)
 * instanceOptions (optional)
 */
+
+
 const accordion = new Accordion(accordionElement, accordionItems, options, instanceOptions);
 
 
@@ -121,6 +126,5 @@ accordion.close('accordion-example-heading-2');
 // toggle visibility of item based on id
 accordion.toggle('accordion-example-heading-3');
 	</script>
-<script is:inline src="/node_modules/flowbite/dist/flowbite.min.js"></script>
 
 </Layout>
