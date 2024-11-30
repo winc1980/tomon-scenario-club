@@ -14,7 +14,7 @@
     "@astrojs/tailwind": "^5.1.2",
     "@fontsource-variable/noto-serif-jp": "^5.1.1",
     "@fontsource/zen-kaku-gothic-new": "^5.1.0",
-    "astro": "^4.14.2",
+    "astro": "^4.16.16",
     "flowbite": "^2.5.2",
     "sass": "^1.77.8",
     "swiper": "^11.1.15",
