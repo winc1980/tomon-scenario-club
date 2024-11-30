@@ -1,5 +1,15 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import '@/scss/styles.scss';
+import Accordion from '@/components/Acordion.astro';
+import Swiper from 'swiper';
+import '@fontsource/zen-kaku-gothic-new';
+import '@fontsource-variable/noto-serif-jp';
+
+import { Image } from 'astro:assets';
+import activityImage from '@/assets/images/activity.png'
+
+
 const title = "";
 const description = "";
 const og_image = "";
@@ -7,12 +17,24 @@ const og_image = "";
 
 <Layout title={title} , description={description} og_image={og_image}>
 	<main>
-	<p>aaa</p>
 		<!-- 作品一覧へ　ここから -->
 		<!-- 作品一覧へ　ここまで -->
 		<!-- NEWS　ここから -->
+		 <section id="news" class="p-news">
+			<h2>NEWS</h2>
+			<!-- <AccordionMenu /> -->
+			<Accordion />
+ 				
+		 </section>
 		<!-- NEWS　ここまで -->
 		<!-- ACTIVITY　ここから -->
+		 <section id="activity" class="p-activity">
+			<h2>ACTIVITY</h2>
+            <div>
+                <Image src={activityImage} alt="activity">
+                <p>稲門シナリオ研究会（通称シナ研）は、早稲田大学公認で70年以上の伝統を誇る映画制作サークル。シナリオ（脚本）を含む企画立案から撮影、編集に至るまで、映画制作のすべてを実践的に学ぶ。毎月の定例会に夏合宿、シナリオ講評会を通じてメンバー同士切磋琢磨し、映画トークで盛り上がり、新鮮で革新的な作品を生み出し続け、エンターテインメント業界を牽引していくことを目指している。</p>     
+            </div>
+		 </section>
 		<!-- ACTIVITY　ここまで -->
 		<!-- GALLERY　ここから -->
 		<!-- GALLERY　ここまで -->
@@ -28,4 +50,77 @@ const og_image = "";
 		<!-- 入会方法　ここから -->
 		<!-- 入会方法　ここまで -->
 	</main>
+	<script>
+	// flowbite
+	const accordionElement = document.getElementById('accordion-example');
+
+// create an array of objects with the id, trigger element (eg. button), and the content element
+const accordionItems = [
+    {
+        id: 'accordion-example-heading-1',
+        triggerEl: document.querySelector('#accordion-example-heading-1'),
+        targetEl: document.querySelector('#accordion-example-body-1'),
+        active: true
+    },
+    {
+        id: 'accordion-example-heading-2',
+        triggerEl: document.querySelector('#accordion-example-heading-2'),
+        targetEl: document.querySelector('#accordion-example-body-2'),
+        active: false
+    },
+    {
+        id: 'accordion-example-heading-3',
+        triggerEl: document.querySelector('#accordion-example-heading-3'),
+        targetEl: document.querySelector('#accordion-example-body-3'),
+        active: false
+    }
+];
+
+// options with default values
+const options = {
+    alwaysOpen: true,
+    activeClasses: 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white',
+    inactiveClasses: 'text-gray-500 dark:text-gray-400',
+    onOpen: (item: any) => {
+        console.log('accordion item has been shown');
+        console.log(item);
+    },
+    onClose: (item: any) => {
+        console.log('accordion item has been hidden');
+        console.log(item);
+    },
+    onToggle: (item: any) => {
+        console.log('accordion item has been toggled');
+        console.log(item);
+    },
+};
+
+// instance options object
+const instanceOptions = {
+    id: 'accordion-example',
+    override: true
+};
+
+import { Accordion } from 'flowbite';
+
+/*
+* accordionEl: HTML element (required)
+* accordionItems: array of accordion item objects (required)
+* options (optional)
+* instanceOptions (optional)
+*/
+const accordion = new Accordion(accordionElement, accordionItems, options, instanceOptions);
+
+
+// open accordion item based on id
+accordion.open('accordion-example-heading-2');
+
+// close accordion item based on id
+accordion.close('accordion-example-heading-2');
+
+// toggle visibility of item based on id
+accordion.toggle('accordion-example-heading-3');
+	</script>
+<script is:inline src="/node_modules/flowbite/dist/flowbite.min.js"></script>
+
 </Layout>
