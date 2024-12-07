@@ -1,5 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import '@/scss/styles.scss';
 import Accordion from '@/components/Acordion.astro';
 import GallerySwiper from '@/components/GallerySwiper.astro'
@@ -12,8 +17,9 @@ import '@fontsource-variable/inter';
 
 import { Image } from 'astro:assets';
 import activityImage from '@/assets/images/activity.png'
-
-
+import eventsImage1 from '@/assets/images/events1.png'
+import eventsImage2 from '@/assets/images/events2.png'
+import eventsImage3 from '@/assets/images/events3.png'
 
 const title = "";
 const description = "";
@@ -36,10 +42,10 @@ const og_image = "";
 		<!-- ACTIVITY　ここから -->
 		 <section id="activity" class="p-activity">
 			<h2>ACTIVITY</h2>
-            <div>
-                <Image src={activityImage} alt="activity" />
-                <p>稲門シナリオ研究会（通称シナ研）は、早稲田大学公認で70年以上の伝統を誇る映画制作サークル。シナリオ（脚本）を含む企画立案から撮影、編集に至るまで、映画制作のすべてを実践的に学ぶ。毎月の定例会に夏合宿、シナリオ講評会を通じてメンバー同士切磋琢磨し、映画トークで盛り上がり、新鮮で革新的な作品を生み出し続け、エンターテインメント業界を牽引していくことを目指している。</p>     
-            </div>
+			<div>
+					<Image src={activityImage} alt="activity" />
+					<p>稲門シナリオ研究会（通称シナ研）は、早稲田大学公認で70年以上の伝統を誇る映画制作サークル。シナリオ（脚本）を含む企画立案から撮影、編集に至るまで、映画制作のすべてを実践的に学ぶ。毎月の定例会に夏合宿、シナリオ講評会を通じてメンバー同士切磋琢磨し、映画トークで盛り上がり、新鮮で革新的な作品を生み出し続け、エンターテインメント業界を牽引していくことを目指している。</p>
+			</div>
 		 </section>
 		<!-- ACTIVITY　ここまで -->
 		<!-- GALLERY　ここから -->
@@ -52,18 +58,121 @@ const og_image = "";
 
 		<!-- 柳原　ここから -->
 		<!-- EVENTS　ここから -->
-		 <section id="events" class="p-events"></section>
+        <script>
+            import "../pages/events"
+        </script>
+        <section id="events" class="p-events">
+            <div class="p-events__l-container">
+              <h1>EVENTS</h1>
+              <div class="p-events__cards_1">
+                <div class="p-events__cards_1_text">
+                    <span class="text">映画作成</span>
+                  <p>
+                    物語の始まりは、偶然のようでいて実は何かしらの縁で繋がっています。例えば、部室で映画の話をしているうちに、ふと思いついたアイデアが現実のプロジェクトに発展することもよくあります。そこからサークル内や知り合いを通じて、自分の持つ知見やスキルを存分に注ぎ込み、一つの作品が形になっていきます。シナ研には映画制作に必要な機材が豊富に揃っており、初心者でもすぐに撮影や編集に挑戦できる環境が整っています。
+                  </p>
+                </div>
+                <Image src={eventsImage1} alt="events1" class="fade-in">
+              </div>
+              <div class="p-events__cards_2">
+                <Image src={eventsImage2} alt="events2" class="fade-in"></Image>
+                <div class="p-events__cards_2_text">
+                    <span class="text reverse">夏合宿</span>
+                    <p>
+                        毎年8月には、サークル恒例の夏合宿が開催されます。映画鑑賞やBBQ、シャボン玉、麻雀など、多彩なアクティビティを通してメンバー同士の親睦を深める良い機会です。昨年は千葉県の白子まで行き、2日目に台風の影響で屋内にこもることになりましたが、映画やゲームに没頭しながら充実した時間を過ごしました。
+                    </p>
+                </div>
+              </div>
+              <div class="p-events__cards_3">
+                <div class="p-events__cards_3_text">
+                    <span class="text">シナリオ講評会</span>
+                  <p>
+                    部員たちがシナリオ（脚本）やプロットを持ち寄り、互いの作品に対して感想を語り合う場。映画化を目指すことが必須ではなく、「書く」という創作そのものにフォーカスし、オリジナリティ溢れる物語を空想から文字に起こします。そして、他者との対話を通じて自分の考えを深め、整理していきます。また、脚本家と監督のマッチングや、各種コンクールへの応募も視野に入れた活動が行われています。
+                  </p>
+                </div>
+                <Image src={eventsImage3} alt="events3" class="fade-in">
+              </div>
+            </div>
+        </section>
+
 		<!-- EVENTS　ここまで -->
 		<!-- HISTORY　ここから -->
+        <section id="history" class="mt-[10px] pb-[100px]">
+            <h2 class="mb-[60px]">HISTORY</h2>
+            <div class="relative">
+              <div id="history-swiper" class="swiper">
+                <div class="swiper-wrapper items-center">
+                </div>
+                <div class="swiper-button-prev bg-black bg-opacity-80 rounded-full !w-[50px] !h-[50px] after:!text-3xl !left-[31px]"></div>
+                <div class="swiper-button-next bg-black bg-opacity-80 rounded-full !w-[50px] !h-[50px] after:!text-3xl !right-[31px]"></div>
+                <div class="swiper-scrollbar"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <!-- TODO: 画像の移動に合わせてテキストも変更する -->
+            <div class="mt-[135px] w-[841px] mx-auto">
+              <p class="text-[#F5F5F5] text-xl font-bold tracking-[10px] mb-3">20世紀後期</p>
+              <p class="tracking-[20px]">大和屋竺や田中陽造らの映画人を輩出</p>
+            </div>
+          </section>
 		<!-- HISTORY　ここまで -->
-		<!-- INFORMATION　ここから -->
-		<!-- INFORMATION　ここまで -->
+		<!-- ABOUT　ここから -->
+    <section id="about" class="py-[100px] text-[#F5F5F5] max-w-[954px] mx-auto mb-[100px] relative">
+      <h2 class="before:content-[''] before:block before:absolute before:h-[1px] before:w-[650px] before:bg-[#F5F5F5] before:bottom-0 before:left-1/2 before:-translate-x-2/4 after:content-[''] after:block after:absolute after:h-[1px] after:w-[650px] after:bg-[#F5F5F5] after:top-0 after:left-1/2 after:-translate-x-2/4">ABOUT</h2>
+      <!-- OVERVIEW -->
+      <table class="mx-auto mt-[77px] w-full">
+        <thead class="text-left text-2xl">
+          <tr class="inline-block overflow-hidden">
+            <th colspan="2" class="tracking-[24px] underline -mr-6 block pb-1 [text-underline-offset:8px]">OVERVIEW</th>
+          </tr>
+        </thead>
+        <tbody class="before:h-[66px] before:block">
+          <tr class="border-b">
+            <td class="pb-[15px] text-xl font-bold">サークル名</td>
+            <td class="pb-[15px]">稲門シナリオ研究会</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-[15px] text-xl font-bold">人数</td>
+            <td>60人</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-[15px] text-xl font-bold">活動場所</td>
+            <td>早稲田大学戸山キャンパス学生会館6F E619</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-[15px] text-xl font-bold">会費</td>
+            <td>年間：4000円　半期：2500円</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-[15px] text-xl font-bold">YouTube</td>
+            <td>稲門シナリオ研究会</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- SNS -->
+      <h3 class="inline-block overflow-hidden text-2xl font-bold mt-[60px] mb-[59px]"><span class="tracking-[24px] underline -mr-6 block pb-1 [text-underline-offset:8px]">SNS</span></h3>
+      <div class="flex justify-between">
+        <a class="twitter-timeline" data-width="432px" data-height="573px" href="https://twitter.com/shinaken_film?ref_src=twsrc%5Etfw">shinaken_filmさんの投稿</a>
+        <div class="ig-container max-w-[432px] w-[432px] h-[573px]"></div>
+      </div>
+    </section>
+		<!-- ABOUT　ここまで -->
 		<!-- 入会方法　ここから -->
+    <section id="join" class="pt-[34px] pb-[53px] bg-[#F5F5F5]">
+      <div class="max-w-[1178px] mx-auto mb-11 text-black">
+        <h2 class="join-title font-bold text-black text-left mb-3">入会方法</h2>
+        <p class= text-xl">ご興味をお持ちいただけましたら、ぜひ新歓LINEグループへご参加ください。</p>
+      </div>
+      <!-- TODO: 先方にラインのURLかQRを作成してもらう -->
+      <a href="#" class="grid place-items-center mx-auto bg-[#1A1A1A] rounded-[10px] w-[270px] h-[58px] text-4xl">JOIN US</a>
+    </section>
 		<!-- 入会方法　ここまで -->
 	</main>
+  
+  <script is:inline src="/node_modules/flowbite/dist/flowbite.min.js"></script>  
 
-    <script is:inline src="/node_modules/flowbite/dist/flowbite.min.js"></script>   
-
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script async src="//www.instagram.com/embed.js"></script>
 	<script>
         import {gallerySwiper} from './gallery';
         gallerySwiper();
@@ -73,77 +182,74 @@ const og_image = "";
 
 
 
+
+        import { historySwiper } from './history';
+        historySwiper();
+        import { fetchInstagramPosts } from './instagram';
+        fetchInstagramPosts();
     
 	// flowbite
-	const accordionElement = document.getElementById('accordion-example');
+	const accordionElement = document.getElementById('accordion-color');
 
 // create an array of objects with the id, trigger element (eg. button), and the content element
 const accordionItems: AccordionItem[] = [
     {
-        id: 'accordion-example-heading-1',
-        triggerEl: document.querySelector('#accordion-example-heading-1')!,
-        targetEl: document.querySelector('#accordion-example-body-1')!,
+      id: 'accordion-color-heading-1',
+        triggerEl: document.querySelector('#accordion-color-heading-1')!,
+        targetEl: document.querySelector('#accordion-color-body-1')!,
         active: true
     },
     {
-        id: 'accordion-example-heading-2',
-        triggerEl: document.querySelector('#accordion-example-heading-2')!,
-        targetEl: document.querySelector('#accordion-example-body-2')!,
+        id: 'accordion-color-heading-2',
+        triggerEl: document.querySelector('#accordion-color-heading-2')!,
+        targetEl: document.querySelector('#accordion-color-body-2')!,
         active: false
     },
     {
-        id: 'accordion-example-heading-3',
-        triggerEl: document.querySelector('#accordion-example-heading-3')!,
-        targetEl: document.querySelector('#accordion-example-body-3')!,
+        id: 'accordion-color-heading-3',
+        triggerEl: document.querySelector('#accordion-color-heading-3')!,
+        targetEl: document.querySelector('#accordion-color-body-3')!,
         active: false
     }
 ];
 
-// options with default values
-const options = {
-    alwaysOpen: true,
-    activeClasses: 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white',
-    inactiveClasses: 'text-gray-500 dark:text-gray-400',
-    onOpen: (item: any) => {
-        console.log('accordion item has been shown');
-        console.log(item);
-    },
-    onClose: (item: any) => {
-        console.log('accordion item has been hidden');
-        console.log(item);
-    },
-    onToggle: (item: any) => {
-        console.log('accordion item has been toggled');
-        console.log(item);
-    },
-};
+    // options with default values
+    const options = {
+        alwaysOpen: true,
+        activeClasses: 'dark:bg-gray-800 text-gray-900 dark:text-white',
+        inactiveClasses: 'text-gray-500 dark:text-gray-400',
+        onOpen: (item: any) => {
+            console.log('accordion item has been shown');
+            console.log(item);
+        },
+        onClose: (item: any) => {
+            console.log('accordion item has been hidden');
+            console.log(item);
+        },
+        onToggle: (item: any) => {
+            console.log('accordion item has been toggled');
+            console.log(item);
+        },
+    };
 
-// instance options object
-const instanceOptions = {
-    id: 'accordion-example',
-    override: true
-};
+    // instance options object
+    const instanceOptions = {
+      id: 'accordion-color',
+        override: true
+    };
 
-import { Accordion, type AccordionItem } from 'flowbite';
-/*
-* accordionEl: HTML element (required)
-* accordionItems: array of accordion item objects (required)
-* options (optional)
-* instanceOptions (optional)
-*/
+    import { Accordion, type AccordionItem } from 'flowbite';
 
-
-const accordion = new Accordion(accordionElement, accordionItems, options, instanceOptions);
+    /*
+    * accordionEl: HTML element (required)
+    * accordionItems: array of accordion item objects (required)
+    * options (optional)
+    * instanceOptions (optional)
+    */
 
 
-// open accordion item based on id
-accordion.open('accordion-example-heading-2');
+    const accordion = new Accordion(accordionElement, accordionItems, options, instanceOptions);
 
-// close accordion item based on id
-accordion.close('accordion-example-heading-2');
-
-// toggle visibility of item based on id
-accordion.toggle('accordion-example-heading-3');
 	</script>
 
 </Layout>
