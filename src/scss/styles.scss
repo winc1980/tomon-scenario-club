@@ -16,34 +16,31 @@ body {
   position: absolute;
   top: 50%;
   left: -8px;
-  transform: translateY(-50%) rotate(-45deg) skew(15deg, 15deg); 
+  transform: translateY(-50%) rotate(-45deg) skew(15deg, 15deg);
   height: 15px;
   width: 15px;
-  border-bottom: 2px solid #FFFFFF;
-  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
 }
 @font-face {
-  font-family:'OPTIC';
-  src: url('/fonts/OPTIC/OPTICopperplate-Heavy.ttf.woff') format('woff');
-  font-display: swap; 
+  font-family: "OPTIC";
+  src: url("/fonts/OPTIC/OPTICopperplate-Heavy.ttf.woff") format("woff");
+  font-display: swap;
 }
 
-
-.ttl{
+.ttl {
   font-size: 50px;
-  font-family: "OPTIC",sans-serif; /*上で設定したフォントファミリー名*/
+  font-family: "OPTIC", sans-serif; /*上で設定したフォントファミリー名*/
 }
-
 
 // プレースホルダー　ここから
-$white: #F5F5F5;
-$charcoal: #383838; 
+$white: #f5f5f5;
+$charcoal: #383838;
 $title-font: OPTIC;
-// プレースホルダー　ここまで 
-
+// プレースホルダー　ここまで
 
 body {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   background-color: #000000;
   color: $white;
 }
@@ -59,10 +56,8 @@ h2 {
 
 // 作品一覧ここから
 h1 {
-  font-family: 'Noto Serif JP Variable', serif;
+  font-family: "Noto Serif JP Variable", serif;
 }
-
-
 
 // NEWS ここから
 #news {
@@ -70,9 +65,6 @@ h1 {
     margin: 40px 10vw 0;
   }
 }
-
-
-
 
 // NEWS ここまで
 
@@ -83,7 +75,6 @@ h1 {
   div {
     display: flex;
     margin: 60px 18vw 0;
-   
   }
 
   p {
@@ -91,6 +82,119 @@ h1 {
     font-size: 14px;
     margin: auto 0 auto 66px;
   }
-
 }
 // ACTIVITY ここまで
+// EVENTS ここから
+.p-events__l-container {
+  width: 951px;
+  margin: auto;
+}
+.p-events h1 {
+  text-align: center;
+  font-size: 64px;
+  font-weight: 500;
+}
+.p-events__cards_1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+}
+.p-events__cards_1_text span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: start;
+}
+.p-events__cards_1_text p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 350px;
+  letter-spacing: 0.2em;
+  padding-top: 31px;
+}
+.p-events__cards_2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+}
+.p-events__cards_2_text span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: end;
+}
+.p-events__cards_2_text p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 350px;
+  letter-spacing: 0.2em;
+  padding-top: 51px;
+}
+.p-events__cards_3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+}
+.p-events__cards_3_text span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: end;
+}
+.p-events__cards_3_text p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 350px;
+  letter-spacing: 0.2em;
+  padding-top: 51px;
+}
+.p-events img {
+  width: 474px;
+  height: 316px;
+}
+
+.text {
+  position: relative;
+  display: inline-block;
+}
+.text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.5s ease;
+}
+.text.reverse::after {
+  left: auto;
+  right: 0;
+  transition: width 0.5s ease, right 0.5s ease;
+}
+.text.underline::after {
+  width: 100%;
+}
+.text.reverse.underline::after {
+  width: 100%;
+  right: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// EVENTS ここまで
+.swiper {
+  width: 600px;
+  height: 300px;
+}
