@@ -163,6 +163,115 @@ h1 {
   }
 }
 // ACTIVITY ここまで
+
+// EVENTS ここから
+.p-events__l-container {
+  width: 951px;
+  margin: auto;
+}
+.p-events h1 {
+  text-align: center;
+  font-size: 64px;
+  font-weight: 500;
+}
+.p-events__cards_1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+}
+.p-events__cards_1_text span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: start;
+}
+.p-events__cards_1_text p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 350px;
+  letter-spacing: 0.2em;
+  padding-top: 31px;
+}
+.p-events__cards_2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+}
+.p-events__cards_2_text span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: end;
+}
+.p-events__cards_2_text p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 350px;
+  letter-spacing: 0.2em;
+  padding-top: 51px;
+}
+.p-events__cards_3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+}
+.p-events__cards_3_text span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: end;
+}
+.p-events__cards_3_text p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 350px;
+  letter-spacing: 0.2em;
+  padding-top: 51px;
+}
+.p-events img {
+  width: 474px;
+  height: 316px;
+}
+.text {
+  position: relative;
+  display: inline-block;
+}
+.text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.5s ease;
+}
+.text.reverse::after {
+  left: auto;
+  right: 0;
+  transition: width 0.5s ease, right 0.5s ease;
+}
+.text.underline::after {
+  width: 100%;
+}
+.text.reverse.underline::after {
+  width: 100%;
+  right: 0;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+// EVENTS　ここまで
+
 // HISTORY ここから
 #history {
   .swiper-button-next,
