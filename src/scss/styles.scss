@@ -129,7 +129,30 @@ h2 {
     }
   }
 
+  &_arrow {
+    position: relative;
+    display: inline-block;
+    margin: 136px 160px 0 auto;
+    justify-content: right;
+    align-items: center;
+
+    &::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border: 0;
+      border-top: solid 2px #333;
+      border-right: solid 2px #333;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
   
+
 }
 
 
