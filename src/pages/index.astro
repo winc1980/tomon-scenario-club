@@ -2,9 +2,13 @@
 import Layout from "@/layouts/Layout.astro";
 import '@/scss/styles.scss';
 import Accordion from '@/components/Acordion.astro';
-import Swiper from 'swiper';
+import GallerySwiper from '@/components/GallerySwiper.astro'
+import Firstview from '@/components/Firstview.astro'
+
 import '@fontsource/zen-kaku-gothic-new';
 import '@fontsource-variable/noto-serif-jp';
+import '@fontsource-variable/inter';
+
 
 import { Image } from 'astro:assets';
 import activityImage from '@/assets/images/activity.png'
@@ -20,25 +24,31 @@ const og_image = "";
 <Layout title={title} , description={description} og_image={og_image}>
 	<main>
 		<!-- 作品一覧へ　ここから -->
+         <section id="firstview" class="p-firstview">
+            <Firstview />
+         </section>
 		<!-- 作品一覧へ　ここまで -->
 		<!-- NEWS　ここから -->
 		 <section id="news" class="p-news">
 			<h2>NEWS</h2>
-			<!-- <AccordionMenu /> -->
 			<Accordion />
- 				
 		 </section>
 		<!-- NEWS　ここまで -->
 		<!-- ACTIVITY　ここから -->
 		 <section id="activity" class="p-activity">
 			<h2>ACTIVITY</h2>
             <div>
-                <Image src={activityImage} alt="activity">
+                <Image src={activityImage} alt="activity" />
                 <p>稲門シナリオ研究会（通称シナ研）は、早稲田大学公認で70年以上の伝統を誇る映画制作サークル。シナリオ（脚本）を含む企画立案から撮影、編集に至るまで、映画制作のすべてを実践的に学ぶ。毎月の定例会に夏合宿、シナリオ講評会を通じてメンバー同士切磋琢磨し、映画トークで盛り上がり、新鮮で革新的な作品を生み出し続け、エンターテインメント業界を牽引していくことを目指している。</p>     
             </div>
 		 </section>
 		<!-- ACTIVITY　ここまで -->
 		<!-- GALLERY　ここから -->
+         <section id="gallery" class="p-gallery">
+            <h2>GALLERY</h2>
+            <GallerySwiper />
+            
+         </section>
 		<!-- GALLERY　ここまで -->
 
 		<!-- 柳原　ここから -->
@@ -88,11 +98,18 @@ const og_image = "";
 		<!-- 入会方法　ここまで -->
 	</main>
 
-    <script is:inline src="/node_modules/flowbite/dist/flowbite.min.js"></script>
-   
+    <script is:inline src="/node_modules/flowbite/dist/flowbite.min.js"></script>   
 
 	<script>
-        
+        import {gallerySwiper} from './gallery';
+        gallerySwiper();
+
+        import '@/pages/firstview';
+
+
+
+
+    
 	// flowbite
 	const accordionElement = document.getElementById('accordion-example');
 
@@ -144,7 +161,6 @@ const instanceOptions = {
 };
 
 import { Accordion, type AccordionItem } from 'flowbite';
-
 /*
 * accordionEl: HTML element (required)
 * accordionItems: array of accordion item objects (required)
