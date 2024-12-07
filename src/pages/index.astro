@@ -7,18 +7,19 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import '@/scss/styles.scss';
 import Accordion from '@/components/Acordion.astro';
+import GallerySwiper from '@/components/GallerySwiper.astro'
+import Firstview from '@/components/Firstview.astro'
+
+import '@fontsource/zen-kaku-gothic-new';
 import '@fontsource-variable/noto-serif-jp';
+import '@fontsource-variable/inter';
+
 
 import { Image } from 'astro:assets';
 import activityImage from '@/assets/images/activity.png'
-import history1 from '@/assets/images/history/1953年.png';
-import history2 from '@/assets/images/history/1954年.png';
-import history3 from '@/assets/images/history/2010年.png';
-import history4 from '@/assets/images/history/2020年.jpg';
-import history5 from '@/assets/images/history/2024年.PNG のコピー.jpg';
-import history6 from '@/assets/images/history/20世紀後期.png';
-import history7 from '@/assets/images/history/20世紀後期.png';
-
+import eventsImage1 from '@/assets/images/events1.png'
+import eventsImage2 from '@/assets/images/events2.png'
+import eventsImage3 from '@/assets/images/events3.png'
 
 const title = "";
 const description = "";
@@ -28,13 +29,14 @@ const og_image = "";
 <Layout title={title} , description={description} og_image={og_image}>
 	<main>
 		<!-- 作品一覧へ　ここから -->
+         <section id="firstview" class="p-firstview">
+            <Firstview />
+         </section>
 		<!-- 作品一覧へ　ここまで -->
 		<!-- NEWS　ここから -->
 		 <section id="news" class="p-news">
 			<h2>NEWS</h2>
-			<!-- <AccordionMenu /> -->
 			<Accordion />
- 				
 		 </section>
 		<!-- NEWS　ここまで -->
 		<!-- ACTIVITY　ここから -->
@@ -47,11 +49,51 @@ const og_image = "";
 		 </section>
 		<!-- ACTIVITY　ここまで -->
 		<!-- GALLERY　ここから -->
+         <section id="gallery" class="p-gallery">
+            <h2>GALLERY</h2>
+            <GallerySwiper />
+            
+         </section>
 		<!-- GALLERY　ここまで -->
 
 		<!-- 柳原　ここから -->
 		<!-- EVENTS　ここから -->
-		 <section id="events" class="p-events"></section>
+        <script>
+            import "../pages/events"
+        </script>
+        <section id="events" class="p-events">
+            <div class="p-events__l-container">
+              <h1>EVENTS</h1>
+              <div class="p-events__cards_1">
+                <div class="p-events__cards_1_text">
+                    <span class="text">映画作成</span>
+                  <p>
+                    物語の始まりは、偶然のようでいて実は何かしらの縁で繋がっています。例えば、部室で映画の話をしているうちに、ふと思いついたアイデアが現実のプロジェクトに発展することもよくあります。そこからサークル内や知り合いを通じて、自分の持つ知見やスキルを存分に注ぎ込み、一つの作品が形になっていきます。シナ研には映画制作に必要な機材が豊富に揃っており、初心者でもすぐに撮影や編集に挑戦できる環境が整っています。
+                  </p>
+                </div>
+                <Image src={eventsImage1} alt="events1" class="fade-in">
+              </div>
+              <div class="p-events__cards_2">
+                <Image src={eventsImage2} alt="events2" class="fade-in"></Image>
+                <div class="p-events__cards_2_text">
+                    <span class="text reverse">夏合宿</span>
+                    <p>
+                        毎年8月には、サークル恒例の夏合宿が開催されます。映画鑑賞やBBQ、シャボン玉、麻雀など、多彩なアクティビティを通してメンバー同士の親睦を深める良い機会です。昨年は千葉県の白子まで行き、2日目に台風の影響で屋内にこもることになりましたが、映画やゲームに没頭しながら充実した時間を過ごしました。
+                    </p>
+                </div>
+              </div>
+              <div class="p-events__cards_3">
+                <div class="p-events__cards_3_text">
+                    <span class="text">シナリオ講評会</span>
+                  <p>
+                    部員たちがシナリオ（脚本）やプロットを持ち寄り、互いの作品に対して感想を語り合う場。映画化を目指すことが必須ではなく、「書く」という創作そのものにフォーカスし、オリジナリティ溢れる物語を空想から文字に起こします。そして、他者との対話を通じて自分の考えを深め、整理していきます。また、脚本家と監督のマッチングや、各種コンクールへの応募も視野に入れた活動が行われています。
+                  </p>
+                </div>
+                <Image src={eventsImage3} alt="events3" class="fade-in">
+              </div>
+            </div>
+        </section>
+
 		<!-- EVENTS　ここまで -->
 		<!-- HISTORY　ここから -->
         <section id="history" class="mt-[10px] pb-[100px]">
@@ -128,22 +170,31 @@ const og_image = "";
 	</main>
   
   <script is:inline src="/node_modules/flowbite/dist/flowbite.min.js"></script>  
+
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script async src="//www.instagram.com/embed.js"></script>
 	<script>
+        import {gallerySwiper} from './gallery';
+        gallerySwiper();
+
+        import '@/pages/firstview';
+
+
+
+
 
         import { historySwiper } from './history';
         historySwiper();
         import { fetchInstagramPosts } from './instagram';
         fetchInstagramPosts();
-        
+    
 	// flowbite
 	const accordionElement = document.getElementById('accordion-color');
 
 // create an array of objects with the id, trigger element (eg. button), and the content element
 const accordionItems: AccordionItem[] = [
     {
-        id: 'accordion-color-heading-1',
+      id: 'accordion-color-heading-1',
         triggerEl: document.querySelector('#accordion-color-heading-1')!,
         targetEl: document.querySelector('#accordion-color-body-1')!,
         active: true
@@ -162,52 +213,43 @@ const accordionItems: AccordionItem[] = [
     }
 ];
 
-// options with default values
-const options = {
-    alwaysOpen: true,
-    activeClasses: 'dark:bg-gray-800 text-gray-900 dark:text-white',
-    inactiveClasses: 'text-gray-500 dark:text-gray-400',
-    onOpen: (item: any) => {
-        console.log('accordion item has been shown');
-        console.log(item);
-    },
-    onClose: (item: any) => {
-        console.log('accordion item has been hidden');
-        console.log(item);
-    },
-    onToggle: (item: any) => {
-        console.log('accordion item has been toggled');
-        console.log(item);
-    },
-};
+    // options with default values
+    const options = {
+        alwaysOpen: true,
+        activeClasses: 'dark:bg-gray-800 text-gray-900 dark:text-white',
+        inactiveClasses: 'text-gray-500 dark:text-gray-400',
+        onOpen: (item: any) => {
+            console.log('accordion item has been shown');
+            console.log(item);
+        },
+        onClose: (item: any) => {
+            console.log('accordion item has been hidden');
+            console.log(item);
+        },
+        onToggle: (item: any) => {
+            console.log('accordion item has been toggled');
+            console.log(item);
+        },
+    };
 
-// instance options object
-const instanceOptions = {
-    id: 'accordion-color',
-    override: true
-};
+    // instance options object
+    const instanceOptions = {
+      id: 'accordion-color',
+        override: true
+    };
 
-import { Accordion, type AccordionItem } from 'flowbite';
+    import { Accordion, type AccordionItem } from 'flowbite';
 
-/*
-* accordionEl: HTML element (required)
-* accordionItems: array of accordion item objects (required)
-* options (optional)
-* instanceOptions (optional)
-*/
-
-
-const accordion = new Accordion(accordionElement, accordionItems, options, instanceOptions);
+    /*
+    * accordionEl: HTML element (required)
+    * accordionItems: array of accordion item objects (required)
+    * options (optional)
+    * instanceOptions (optional)
+    */
 
 
-// open accordion item based on id
-// accordion.open('accordion-example-heading-2');
+    const accordion = new Accordion(accordionElement, accordionItems, options, instanceOptions);
 
-// close accordion item based on id
-// accordion.close('accordion-example-heading-2');
-
-// toggle visibility of item based on id
-// accordion.toggle('accordion-example-heading-3');
 	</script>
 
 </Layout>

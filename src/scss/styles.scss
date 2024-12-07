@@ -4,6 +4,8 @@
 
 body {
   background-color: black;
+  margin: 0;
+  padding: 0;
 }
 
 .li-current__breadcrumb {
@@ -16,36 +18,34 @@ body {
   position: absolute;
   top: 50%;
   left: -8px;
-  transform: translateY(-50%) rotate(-45deg) skew(15deg, 15deg); 
+  transform: translateY(-50%) rotate(-45deg) skew(15deg, 15deg);
   height: 15px;
   width: 15px;
-  border-bottom: 2px solid #FFFFFF;
-  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
 }
 @font-face {
-  font-family:'OPTIC';
-  src: url('/fonts/OPTIC/OPTICopperplate-Heavy.ttf.woff') format('woff');
-  font-display: swap; 
+  font-family: "OPTIC";
+  src: url("/fonts/OPTIC/OPTICopperplate-Heavy.ttf.woff") format("woff");
+  font-display: swap;
 }
 
-
-.ttl{
+.ttl {
   font-size: 50px;
-  font-family: "OPTIC",sans-serif; /*上で設定したフォントファミリー名*/
+  font-family: "OPTIC", sans-serif; /*上で設定したフォントファミリー名*/
 }
-
 
 // プレースホルダー　ここから
-$white: #F5F5F5;
-$charcoal: #383838; 
+$white: #f5f5f5;
+$charcoal: #383838;
 $title-font: OPTIC;
-// プレースホルダー　ここまで 
-
+// プレースホルダー　ここまで
 
 body {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   background-color: #000000;
   color: $white;
+  scroll-behavior: smooth;
 }
 
 h2 {
@@ -59,10 +59,84 @@ h2 {
 
 // 作品一覧ここから
 h1 {
-  font-family: 'Noto Serif JP Variable', serif;
+  font-family: "Noto Serif JP Variable", serif;
 }
 
+.p-firstview {
+  margin-top: 388px;
+  text-align: center;
+  position: relative;
+  height: 1000vh;
+  overflow: hidden;
 
+  h1,
+  p {
+    font-family: "Noto Serif JP Variable", serif;
+    color: $white;
+  }
+
+  &_text {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+  }
+
+  &_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    transform: translateY(0);
+  }
+
+  h1 {
+    font-weight: 400;
+    font-size: 96px;
+    margin-bottom: 50px;
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 64px;
+  }
+
+  &_text_scroll {
+    margin: 136px 160px 0 auto;
+    justify-content: right;
+    display: flex;
+    align-items: center;
+
+    &_triangle {
+      --b: 2px; /* control the border thickness */
+      width: 20px;
+      aspect-ratio: 1 / cos(30deg);
+      clip-path: polygon(
+        50% 100%,
+        100% 0,
+        0 0,
+        50% 100%,
+        50% calc(100% - var(--b)),
+        calc(var(--b) * cos(30deg)) calc(var(--b) / 2),
+        calc(100% - var(--b) * cos(30deg)) calc(var(--b) / 2),
+        50% calc(100% - var(--b))
+      );
+      background-color: $white;
+    }
+
+    p {
+      font-family: "Inter Variable", sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+}
+
+// 作品一覧ここまで
 
 // NEWS ここから
 #news {
@@ -70,9 +144,6 @@ h1 {
     margin: 40px 10vw 0;
   }
 }
-
-
-
 
 // NEWS ここまで
 
@@ -83,7 +154,6 @@ h1 {
   div {
     display: flex;
     margin: 60px 18vw 0;
-   
   }
 
   p {
@@ -91,7 +161,6 @@ h1 {
     font-size: 14px;
     margin: auto 0 auto 66px;
   }
-
 }
 // ACTIVITY ここまで
 
@@ -159,3 +228,194 @@ h1 {
   transform: translateY(0);
 }
 // /works/detailここまで
+// EVENTS ここから
+.p-events__l-container {
+  width: 951px;
+  margin: auto;
+}
+.p-events h1 {
+  text-align: center;
+  font-size: 64px;
+  font-weight: 500;
+}
+.p-events__cards_1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+}
+.p-events__cards_1_text span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: start;
+}
+.p-events__cards_1_text p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 350px;
+  letter-spacing: 0.2em;
+  padding-top: 31px;
+}
+.p-events__cards_2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+}
+.p-events__cards_2_text span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: end;
+}
+.p-events__cards_2_text p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 350px;
+  letter-spacing: 0.2em;
+  padding-top: 51px;
+}
+.p-events__cards_3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+}
+.p-events__cards_3_text span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: end;
+}
+.p-events__cards_3_text p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 350px;
+  letter-spacing: 0.2em;
+  padding-top: 51px;
+}
+.p-events img {
+  width: 474px;
+  height: 316px;
+}
+
+.text {
+  position: relative;
+  display: inline-block;
+}
+.text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.5s ease;
+}
+.text.reverse::after {
+  left: auto;
+  right: 0;
+  transition: width 0.5s ease, right 0.5s ease;
+}
+.text.underline::after {
+  width: 100%;
+}
+.text.reverse.underline::after {
+  width: 100%;
+  right: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// EVENTS ここまで
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+// GALLERY ここから
+#gallery {
+  margin: 100px auto 131px;
+}
+
+#gallery .swiper {
+  margin-top: 125px;
+
+  &-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &-button {
+    &-prev,
+    &-next {
+      color: $white;
+      background-color: #000000;
+      border-radius: 50%;
+      height: 6vw;
+      width: 6vw;
+      text-align: center;
+      opacity: 0.7;
+    }
+  }
+
+  &-slide {
+    text-align: center;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+      object-fit: cover;
+      height: 31vw;
+      width: 38vw;
+    }
+
+    &-next,
+    &-prev {
+      position: relative;
+    }
+
+    &-next::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0) 60%,
+        rgba(0, 0, 0)
+      ); /* 徐々に透明にする */
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &-prev::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 60%,
+        rgba(0, 0, 0)
+      ); /* 徐々に透明にする */
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+// GALLERY ここまで
