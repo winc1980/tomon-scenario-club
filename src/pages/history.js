@@ -28,3 +28,30 @@ export function historySwiper() {
     },
   })
 }
+
+export async function fetchHistoryContents() {
+  const apiUrl = 'https://tomon-scenario-club.microcms.io/api/v1/history?orders=publishedAt';
+  const apiKey = 'DEKFxXeuBqVkz26B8swYBEePfaGTrji9Bf53';
+  try {
+    const response = await fetch(apiUrl, {
+      headers: {
+        'X-API-KEY': apiKey
+      },
+    });
+    const data = await response.json();
+    const swiperWrapper = document.querySelector('#history-swiper .swiper-wrapper');
+
+    if (data.contents) {
+      data.contents.forEach(content => {
+        const embedHtml = `
+          <div class="swiper-slide">
+            <Image src=${content.image.url} alt='historyのイメージ画像' class="mx-auto h-[294px] w-full object-cover" />
+          </div>
+        `
+        swiperWrapper.innerHTML += embedHtml;
+      })
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
