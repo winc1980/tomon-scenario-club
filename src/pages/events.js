@@ -5,11 +5,13 @@ const offsets = [600, 1000, 1400]; // 各テキストのスクロール閾値
 
 // スクロールイベントのリスナーを設定
 window.addEventListener("scroll", () => {
+  var scroll = window.scrollY;
+  const windowHeight = window.innerHeight;
   texts.forEach((text, index) => {
-    if (window.scrollY > offsets[index]) {
-      text.classList.add("underline"); // 下線アニメーションを適用
+    if (scroll + windowHeight > text.offsetTop) {
+      text.classList.add("line"); // 下線アニメーションを適用
     } else {
-      text.classList.remove("underline"); // 下線アニメーションを解除
+      text.classList.remove("line"); // 下線アニメーションを解除
     }
   });
 });

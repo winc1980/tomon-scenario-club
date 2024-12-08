@@ -317,7 +317,6 @@ h2 {
 }
 .text {
   position: relative;
-  display: inline-block;
 }
 .text::after {
   content: "";
@@ -334,11 +333,12 @@ h2 {
   right: 0;
   transition: width 0.5s ease, right 0.5s ease;
 }
-.text.underline::after {
-  width: 100%;
+.text.line::after {
+  background-color: white;
+  width: 510px;
 }
-.text.reverse.underline::after {
-  width: 100%;
+.text.reverse.line::after {
+  width: 510px;
   right: 0;
 }
 .fade-in {
