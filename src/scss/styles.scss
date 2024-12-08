@@ -196,6 +196,7 @@ h2 {
 }
 #gallery .swiper{
   margin-top: 125px;
+  user-select: none;
   &-container {
     position: relative;
     overflow: hidden;
@@ -354,9 +355,13 @@ h2 {
 
 // HISTORY ここから
 #history {
-  .swiper-button-next,
-  .swiper-button-prev {
-      --swiper-navigation-color: #F5F5F5; //ここに変更する色を指定
+  .swiper {
+    user-select: none;
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        --swiper-navigation-color: #F5F5F5; //ここに変更する色を指定
+    }
   }
   
   .swiper-horizontal > .swiper-pagination-progressbar,
