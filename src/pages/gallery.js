@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/bundle'
 
 export function gallerySwiper() {
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('#gallery-swiper', {
         modules: [Navigation],
         // Optional parameters
         direction: 'horizontal',
@@ -15,10 +15,6 @@ export function gallerySwiper() {
         centeredSlides: true,
         slidesPerView: 2,
         spaceBetween: '16vw',
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
     
         // Navigation arrows
         navigation: {

@@ -8,25 +8,20 @@ import gallery4 from '@/assets/images/gallery4.jpg'
 ---
 
 <!-- Slider main container -->
-<div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><Image src={gallery1} alt="gallery1" /></div>
-      <div class="swiper-slide"><Image src={gallery2} alt="gallery2" /></div>
-      <div class="swiper-slide"><Image src={gallery3} alt="gallery3" /></div>
-      <div class="swiper-slide"><Image src={gallery4} alt="gallery4" /></div>
+<div id="gallery-swiper" class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><Image src={gallery1} alt="gallery1" /></div>
+    <div class="swiper-slide"><Image src={gallery2} alt="gallery2" /></div>
+    <div class="swiper-slide"><Image src={gallery3} alt="gallery3" /></div>
+    <div class="swiper-slide"><Image src={gallery4} alt="gallery4" /></div>
 
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-  
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
   </div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
 
   
