@@ -8,6 +8,19 @@ body {
   padding: 0;
 }
 
+.is-not-visible {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+  transform: translateY(50px);
+}
+
+.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
 .li-current__breadcrumb {
   position: relative;
 }
@@ -357,7 +370,7 @@ h2 {
 #history {
   .swiper {
     user-select: none;
-    
+
     .swiper-button-next,
     .swiper-button-prev {
         --swiper-navigation-color: #F5F5F5; //ここに変更する色を指定
