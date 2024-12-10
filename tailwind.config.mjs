@@ -24,6 +24,9 @@ module.exports = {
 
 	theme: {
 		extend: {},
+		screens: {
+			md: {'max': '768px'}
+		}
 	},
  
 }
