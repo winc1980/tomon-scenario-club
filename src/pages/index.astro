@@ -34,30 +34,30 @@ const og_image = "";
     </section> -->
 		<!-- 作品一覧へ　ここまで -->
 		<!-- NEWS　ここから -->
-    <section id="news" class="p-news">
+    <section id="news" class="md:!mb-[70px] p-news">
       <h2 class="is-not-visible">NEWS</h2>
       <Accordion />
     </section>
 		<!-- NEWS　ここまで -->
 		<!-- ACTIVITY　ここから -->
-    <section id="activity" class="p-activity mb-[100px]">
+    <section id="activity" class="md:!max-w-[300px] md:!mb-[70px] p-activity mb-[100px]">
       <h2 class="is-not-visible">ACTIVITY</h2>
-      <div class="is-not-visible">
-        <Image src={activityImage} alt="activity" />
-        <p>稲門シナリオ研究会（通称シナ研）は、早稲田大学公認で70年以上の伝統を誇る映画制作サークル。シナリオ（脚本）を含む企画立案から撮影、編集に至るまで、映画制作のすべてを実践的に学ぶ。毎月の定例会に夏合宿、シナリオ講評会を通じてメンバー同士切磋琢磨し、映画トークで盛り上がり、新鮮で革新的な作品を生み出し続け、エンターテインメント業界を牽引していくことを目指している。</p>
+      <div class="is-not-visible items-center gap-[66px] md:gap-[40px] md:flex-col md:!mt-[30px]">
+        <Image src={activityImage} alt="activity" class="md:w-[170px]" />
+        <p class="md:text-xs md:!font-normal md:!leading-tight">稲門シナリオ研究会（通称シナ研）は、早稲田大学公認で70年以上の伝統を誇る映画制作サークル。シナリオ（脚本）を含む企画立案から撮影、編集に至るまで、映画制作のすべてを実践的に学ぶ。毎月の定例会に夏合宿、シナリオ講評会を通じてメンバー同士切磋琢磨し、映画トークで盛り上がり、新鮮で革新的な作品を生み出し続け、エンターテインメント業界を牽引していくことを目指している。</p>
       </div>
     </section>
 		<!-- ACTIVITY　ここまで -->
 		<!-- GALLERY　ここから -->
-    <section id="gallery" class="p-gallery mb-[100px]">
-      <h2 class="is-not-visible mb-[131px]">GALLERY</h2>
+    <section id="gallery" class="md:!mb-[70px] p-gallery mb-[100px]">
+      <h2 class="is-not-visible md:mb-[30px] mb-[131px]">GALLERY</h2>
       <GallerySwiper />
     </section>
 		<!-- GALLERY　ここまで -->
 
 		<!-- 柳原　ここから -->
 		<!-- EVENTS　ここから -->
-    <section id="events" class="p-events mb-[100px]">
+    <section id="events" class="md:!mb-[70px] p-events mb-[100px]">
       <div class="p-events__l-container">
         <h2 class="is-not-visible">EVENTS</h2>
         <div class="p-events__cards_1">
@@ -91,7 +91,7 @@ const og_image = "";
     </section>
 		<!-- EVENTS　ここまで -->
 		<!-- HISTORY　ここから -->
-    <section id="history" class="pb-[100px]">
+    <section id="history" class="md:!mb-[70px] pb-[100px]">
       <h2 class="is-not-visible mb-[60px]">HISTORY</h2>
       <div class="relative">
         <div id="history-swiper" class="swiper is-not-visible">

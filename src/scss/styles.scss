@@ -70,6 +70,12 @@ h2 {
   letter-spacing: 8px;
 }
 
+@media (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+
 // 作品一覧ここから
 .p-firstview {
   margin-top: 388px;
@@ -187,17 +193,19 @@ h2 {
 
 // ACTIVITY ここから
 #activity {
-  margin-top: 100px;
+  margin: 0 auto;
+  max-width: 924px;
+  padding: 0 10px;
+  box-sizing: content-box;
 
   div {
     display: flex;
-    margin: 60px 18vw 0;
+    margin-top: 60px;
   }
 
   p {
     font-weight: 700;
     font-size: 14px;
-    margin: auto 0 auto 66px;
     line-height: 30px;
   }
 }
@@ -205,7 +213,7 @@ h2 {
 
 // GALLERY　ここから
 #gallery {
-  margin: 100px auto 131px;
+  margin: 0 auto 131px;
 }
 #gallery .swiper{
   margin-top: 125px;
