@@ -333,7 +333,7 @@ h2 {
   letter-spacing: 0.2em;
   padding-top: 51px;
 }
-.p-events img {
+.p-events__l-container img {
   width: 474px;
   height: 316px;
 }
@@ -371,6 +371,16 @@ h2 {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+#events .swiper-pagination-bullet {
+  width: 5px !important;
+  height: 5px !important;
+  background-color: #8C8C8C;
+}
+
+#events .swiper-pagination-bullet-active {
+  background-color: #F5F5F5;
 }
 // EVENTS　ここまで
 
