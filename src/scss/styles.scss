@@ -273,8 +273,9 @@ h2 {
 
 // EVENTS ここから
 .p-events__l-container {
-  width: 951px;
+  max-width: 951px;
   margin: auto;
+  padding: 0 19px;
 }
 .p-events__cards_1 {
   display: flex;
@@ -313,6 +314,7 @@ h2 {
   width: 350px;
   letter-spacing: 0.2em;
   padding-top: 51px;
+  padding-left: 15px;
 }
 .p-events__cards_3 {
   display: flex;
@@ -332,10 +334,6 @@ h2 {
   width: 350px;
   letter-spacing: 0.2em;
   padding-top: 51px;
-}
-.p-events__l-container img {
-  width: 474px;
-  height: 316px;
 }
 .text {
   position: relative;
@@ -358,6 +356,7 @@ h2 {
 .text.line::after {
   background-color: white;
   width: 510px;
+  z-index: 10;
 }
 .text.reverse.line::after {
   width: 510px;
