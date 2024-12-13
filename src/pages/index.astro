@@ -41,7 +41,7 @@ const og_image = "";
 		<!-- ACTIVITY　ここから -->
     <section id="activity" class="md:!max-w-[300px] md:!mb-[70px] p-activity mb-[100px]">
       <h2 class="is-not-visible">ACTIVITY</h2>
-      <div class="is-not-visible items-center gap-[66px] md:gap-[40px] md:flex-col md:!mt-[30px]">
+      <div class="is-not-visible items-center gap-[66px] md:gap-[40px] md:flex-col md:!mt-[27px]">
         <Image src={activityImage} alt="activity" class="md:w-[170px]" />
         <p class="md:text-xs md:!font-normal md:!leading-tight">稲門シナリオ研究会（通称シナ研）は、早稲田大学公認で70年以上の伝統を誇る映画制作サークル。シナリオ（脚本）を含む企画立案から撮影、編集に至るまで、映画制作のすべてを実践的に学ぶ。毎月の定例会に夏合宿、シナリオ講評会を通じてメンバー同士切磋琢磨し、映画トークで盛り上がり、新鮮で革新的な作品を生み出し続け、エンターテインメント業界を牽引していくことを目指している。</p>
       </div>
@@ -49,7 +49,7 @@ const og_image = "";
 		<!-- ACTIVITY　ここまで -->
 		<!-- GALLERY　ここから -->
     <section id="gallery" class="md:!mb-[70px] p-gallery mb-[100px]">
-      <h2 class="is-not-visible md:mb-[30px] mb-[131px]">GALLERY</h2>
+      <h2 class="is-not-visible md:mb-[27px] mb-[131px]">GALLERY</h2>
       <GallerySwiper />
     </section>
 		<!-- GALLERY　ここまで -->
@@ -94,7 +94,7 @@ const og_image = "";
         </div>
       </div>
       <div class="md:block hidden">
-        <h2 class="mb-9">EVENTS</h2>
+        <h2 class="mb-[27px]">EVENTS</h2>
         <div id="events-swiper" class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide !h-[577px] pt-5 pb-[27px] text-center px-5 !relative overflow-hidden after:[background-image:url(@/assets/images/events1.png)] after:bg-no-repeat after:bg-cover after:content-[''] after:absolute after:bg-center after:-inset-1 after:-z-10 after:blur-sm after:grayscale">
@@ -120,7 +120,7 @@ const og_image = "";
 		<!-- EVENTS　ここまで -->
 		<!-- HISTORY　ここから -->
     <section id="history" class="md:!pb-[60px] pb-[100px]">
-      <h2 class="is-not-visible mb-[60px]">HISTORY</h2>
+      <h2 class="is-not-visible md:mb-[27px] mb-[60px]">HISTORY</h2>
       <div class="relative">
         <div id="history-swiper" class="swiper is-not-visible">
           <div class="swiper-wrapper items-center">
@@ -131,7 +131,7 @@ const og_image = "";
         <div class="swiper-pagination"></div>
       </div>
       <!-- TODO: 画像の移動に合わせてテキストも変更する -->
-      <div class="md:text-center md:text-xs mt-[135px] m-w-[841px] mx-auto px-14">
+      <div class="md:text-center md:text-xs md:mt-[43px] mt-[135px] max-w-[841px] box-content mx-auto px-14">
         <p class="md:tracking-[4px] text-[#F5F5F5] text-xl font-bold tracking-[10px] mb-3">20世紀後期</p>
         <p class="md:tracking-[4px] tracking-[20px]">大和屋竺や田中陽造らの映画人を輩出</p>
       </div>
@@ -142,7 +142,7 @@ const og_image = "";
       <h2 class="is-not-visible">ABOUT</h2>
       <!-- OVERVIEW -->
       <div class="px-[19px]">
-        <table class="md:mt-[29px] mx-auto mt-[77px] w-full before:md:hidden after:md:hidden before:content-[''] before:block before:absolute before:h-[1px] before:w-[650px] before:bg-[#F5F5F5] before:bottom-0 before:left-1/2 before:-translate-x-2/4 after:content-[''] after:block after:absolute after:h-[1px] after:w-[650px] after:bg-[#F5F5F5] after:top-0 after:left-1/2 after:-translate-x-2/4">
+        <table class="md:mt-[27px] mx-auto mt-[77px] w-full before:md:hidden after:md:hidden before:content-[''] before:block before:absolute before:h-[1px] before:w-[650px] before:bg-[#F5F5F5] before:bottom-0 before:left-1/2 before:-translate-x-2/4 after:content-[''] after:block after:absolute after:h-[1px] after:w-[650px] after:bg-[#F5F5F5] after:top-0 after:left-1/2 after:-translate-x-2/4">
           <thead class="is-not-visible md:text-xs text-2xl">
             <tr>
               <th colspan="2" class="md:table-cell md:tracking-[5px] tracking-[24px] inline-block relative after:md:w-[96px] after:md:mx-auto after:md:-left-1 after:md:right-0 after:md:-bottom-[2px] after:content-[''] after:block after:w-11/12 after:h-[1px] after:absolute after:-bottom-1 after:bg-[#F5F5F5]">OVERVIEW</th>
@@ -176,7 +176,7 @@ const og_image = "";
       <!-- SNS -->
       <div class="px-[19px]">
         <h3 class="is-not-visible md:mt-7 md:mb-5 md:block md:text-center md:text-xs md:tracking-[5px] text-2xl font-bold mt-[60px] mb-[59px] inline-block relative after:md:w-[35px] after:md:-left-1 after:md:right-0 after:md:mx-auto after:md:-bottom-[2px] after:content-[''] after:block after:w-full after:h-[1px] after:absolute after:-bottom-1 after:bg-[#F5F5F5]">SNS</h3>
-        <div class="is-not-visible md:gap-[25px] md:flex-col flex justify-between">
+        <div class="is-not-visible md:gap-[25px] md:flex-col flex justify-between items-center">
           <a class="twitter-timeline" data-width="432px" data-height="573px" href="https://twitter.com/shinaken_film?ref_src=twsrc%5Etfw">shinaken_filmさんの投稿</a>
           <div class="ig-container w-[432px] max-w-full h-[573px]"></div>
         </div>
