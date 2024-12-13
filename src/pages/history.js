@@ -3,18 +3,17 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 export function historySwiper() {
   const swiper = new Swiper('#history-swiper', {
     modules: [Navigation, Pagination],
     direction: 'horizontal',
-    spaceBetween: 31,
-    slidesPerView: 3.3,
     centeredSlides: true,
+    spaceBetween: 23,
+    slidesPerView: 1.3,
   
     pagination: {
-      el: '.swiper-pagination',
+      el: '#history .swiper-pagination',
       type: "progressbar",
     },
   
@@ -22,7 +21,15 @@ export function historySwiper() {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  })
+
+    breakpoints: {
+      769: {
+        spaceBetween: 31,
+        slidesPerView: 3.3,
+      }
+    }
+  });
+  console.log("swiper: ", swiper.pagination);
 }
 
 export async function fetchHistoryContents() {

@@ -397,7 +397,7 @@ h2 {
   
   .swiper-horizontal > .swiper-pagination-progressbar,
   .swiper-pagination-progressbar.swiper-pagination-horizontal {
-    width: 841px;
+    width: 58%;
     height: 10px;
     bottom: -63px;
     top: auto;
@@ -409,6 +409,15 @@ h2 {
     span {
       background-color: #F5F5F5;
       border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #history {
+    .swiper-horizontal > .swiper-pagination-progressbar,
+    .swiper-pagination-progressbar.swiper-pagination-horizontal {
+      height: 3px;
     }
   }
 }
