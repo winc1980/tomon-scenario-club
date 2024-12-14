@@ -29,11 +29,10 @@ export function historySwiper() {
       }
     }
   });
-  console.log("swiper: ", swiper.pagination);
 }
 
 export async function fetchHistoryContents() {
-  const apiUrl = 'https://tomon-scenario-club.microcms.io/api/v1/history?orders=publishedAt';
+  const apiUrl = 'https://tomon-scenario-club.microcms.io/api/v1/history?limit=100&orders=publishedAt';
   const apiKey = 'DEKFxXeuBqVkz26B8swYBEePfaGTrji9Bf53';
   try {
     const response = await fetch(apiUrl, {
