@@ -1,8 +1,6 @@
-import arrow from '@/assets/images/accordion-arrow.png';
-
 export async function fetchNewsContents() {
-  const apiUrl = 'https://tomon-scenario-club.microcms.io/api/v1/news?orders=-date';
-  const apiKey = 'DEKFxXeuBqVkz26B8swYBEePfaGTrji9Bf53';
+  const apiUrl = `${import.meta.env.MICROCMS_API_URL}news?orders=-date`;
+  const apiKey = import.meta.env.MICROCMS_API_KEY;
   try {
     const response = await fetch(apiUrl, {
       headers: {

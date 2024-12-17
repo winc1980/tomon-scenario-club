@@ -32,8 +32,8 @@ export function historySwiper() {
 }
 
 export async function fetchHistoryContents() {
-  const apiUrl = 'https://tomon-scenario-club.microcms.io/api/v1/history?limit=100&orders=publishedAt';
-  const apiKey = 'DEKFxXeuBqVkz26B8swYBEePfaGTrji9Bf53';
+  const apiUrl = `${import.meta.env.MICROCMS_API_URL}history?limit=100&orders=publishedAt`;
+  const apiKey = import.meta.env.MICROCMS_API_KEY;
   try {
     const response = await fetch(apiUrl, {
       headers: {

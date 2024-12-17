@@ -1,6 +1,6 @@
 export async function fetchInstagramPosts() {
-  const apiUrl = 'https://tomon-scenario-club.microcms.io/api/v1/instagram_posts';
-  const apiKey = 'DEKFxXeuBqVkz26B8swYBEePfaGTrji9Bf53';
+  const apiUrl = `${import.meta.env.MICROCMS_API_URL}instagram_posts`;
+  const apiKey = import.meta.env.MICROCMS_API_KEY;
   try {
     const response = await fetch(apiUrl, {
       headers: {
