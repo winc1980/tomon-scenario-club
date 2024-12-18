@@ -1,6 +1,6 @@
 export async function fetchNewsContents() {
-  const apiUrl = `${import.meta.env.MICROCMS_API_URL}news?orders=-date`;
-  const apiKey = import.meta.env.MICROCMS_API_KEY;
+  const apiUrl = `${import.meta.env.PUBLIC_MICROCMS_API_URL}news?orders=-date`;
+  const apiKey = import.meta.env.PUBLIC_MICROCMS_API_KEY;
   try {
     const response = await fetch(apiUrl, {
       headers: {

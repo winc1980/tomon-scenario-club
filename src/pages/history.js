@@ -32,8 +32,8 @@ export function historySwiper() {
 }
 
 export async function fetchHistoryContents() {
-  const apiUrl = `${import.meta.env.MICROCMS_API_URL}history?limit=100&orders=publishedAt`;
-  const apiKey = import.meta.env.MICROCMS_API_KEY;
+  const apiUrl = `${import.meta.env.PUBLIC_MICROCMS_API_URL}history?limit=100&orders=publishedAt`;
+  const apiKey = import.meta.env.PUBLIC_MICROCMS_API_KEY;
   try {
     const response = await fetch(apiUrl, {
       headers: {
@@ -41,19 +41,9 @@ export async function fetchHistoryContents() {
       },
     });
     const data = await response.json();
-    const swiperWrapper = document.querySelector('#history-swiper .swiper-wrapper');
-
-    if (data.contents) {
-      data.contents.forEach(content => {
-        const embedHtml = `
-          <div class="swiper-slide">
-            <Image src=${content.image.url} alt='historyのイメージ画像' class="mx-auto h-[294px] w-full object-cover" />
-          </div>
-        `
-        swiperWrapper.innerHTML += embedHtml;
-      })
-    }
+    return data.contents;
   } catch (error) {
     console.error(error);
+    return;
   }
 }
