@@ -216,6 +216,29 @@ const og_image = "";
     historySwiper();
     import { fetchInstagramPosts } from './instagram';
     fetchInstagramPosts();
+
+    function toggleTitleCss(index: number) {
+      const button = document.querySelector(`#accordion-color-heading-${index} .accordion-button`);
+      const title = document.querySelector(`#accordion-color-heading-${index} .accordion-title`);
+
+      if (button && title) {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+
+        if (isExpanded) {
+          title.classList.add('max-w-[90%]', 'truncate');
+        } else {
+          title.classList.remove('max-w-[90%]', 'truncate');
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.accordion-button');
+      buttons.forEach((button, i) => {
+        button.addEventListener('click', () => toggleTitleCss(i + 1));
+      });
+    });
     
     // flowbite
     const accordionElement = document.getElementById('accordion-color');

@@ -1,64 +1,29 @@
 ---
-import Image from "astro/components/Image.astro"
-import arrow from '@/assets/images/accordion-arrow.png'
+import { fetchNewsContents } from '@/pages/news';
+const newsContents = await fetchNewsContents();
+import { formatDate } from '@/pages/utils';
 ---
 
 
 <div id="accordion-color" data-accordion="collapse" data-active-classes="rounded-b-none dark:bg-gray-800 text-blue-600 dark:text-white border-b-0">
   <ul>
-    <!-- <li class="md:!mt-[27px] is-not-visible">
-      <p id="accordion-color-heading-1">
-        <button type="button" class="md:py-[11px] flex items-center justify-between w-full p-5 rtl:text-right text-white border border-gray-200 rounded-xl gap-3 font-bold" data-accordion-target="#accordion-color-body-1" aria-expanded="true" aria-controls="accordion-color-body-1">
-          <div>
-            <span class="md:text-sm text-2xl">サークル説明会・部室紹介</span>
-            <span class="md:text-xs text-base ml-[10px]">2025/04/01</span>
+    {newsContents.map((content: any, i: number) => (
+      <li class="md:!mt-[27px] is-not-visible">
+        <p id={`accordion-color-heading-${i+1}`}>
+          <button type="button" class="accordion-button md:py-[11px] flex items-center justify-between w-full p-5 rtl:text-right text-white border border-gray-200 rounded-xl gap-3 font-bold" data-accordion-target={`#accordion-color-body-${i+1}`} aria-expanded="true" aria-controls={`accordion-color-body-${i+1}`}>
+            <div class="max-w-[95%] text-left flex items-baseline">
+              <span class="accordion-title md:text-sm text-2xl block max-w-[90%] truncate">{content.title}</span>
+              <span class="md:text-xs text-base ml-[10px]">{formatDate(content.date)}</span>
+            </div>
+            <img data-accordion-icon src='/src/assets/images/accordion-arrow.png' alt='' class="md:w-[15px] md:h-[15px] h-5 w-5" />
+          </button>
+        </p>
+        <div id={`accordion-color-body-${i+1}`} class="hidden font-light text-xl" aria-labelledby={`accordion-color-heading-${i+1}`}>
+          <div class="p-5 md:pt-0 border border-t-0 border-gray-200 rounded-b-xl">
+            <p class="text-white pb-9 text-xl md:text-xs">{content.content}</p>
           </div>
-          
-          <Image data-accordion-icon src={arrow} alt='' height={20} width={20} class="md:w-[15px]" />
-        </button>
-      </p>
-      <div id="accordion-color-body-1" class="hidden font-light text-xl" aria-labelledby="accordion-color-heading-1">
-        <div class="p-5 md:pt-0 border border-t-0 border-gray-200 rounded-b-xl">
-          <p class="text-white pb-9 text-xl md:text-xs">4月12日 、19日、24日 サークル説明会・部室紹介<br />部室にて【シナ研】の特徴と早稲田の映画サークルについて説明します！</p>
         </div>
-      </div>
-    </li>
-
-    <li class="md:!mt-5 is-not-visible">
-      <p id="accordion-color-heading-2">
-        <button type="button" class="md:py-[11px] flex items-center justify-between w-full p-5 rtl:text-right text-white border border-gray-200 rounded-xl gap-3 font-bold" data-accordion-target="#accordion-color-body-2" aria-expanded="true" aria-controls="accordion-color-body-2">
-          <div>
-            <span class="md:text-sm text-2xl">クリストファー・ノーランが学生時代に監督した『DOODLEBUG』を再現してみよう！</span>
-            <span class="md:text-xs text-base ml-[10px]">2025/04/01</span>
-          </div>
-          <Image data-accordion-icon src={arrow} alt='' height={20} width={20} class="md:w-[15px]" />
-        </button>
-      </p>
-      <div id="accordion-color-body-2" class="hidden font-light text-xl" aria-labelledby="accordion-color-heading-2">
-        <div class="p-5 md:pt-0 border border-t-0 border-gray-200 rounded-b-xl">
-          <p class="text-white text-xl md:text-xs pb-9">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
-        </div>
-      </div>
-    </li>
-
-    <li class="md:!mt-5 is-not-visible">
-      <p id="accordion-color-heading-3">
-        <button type="button" class="md:py-[11px] flex items-center justify-between w-full p-5 rtl:text-right text-white border border-gray-200 rounded-xl gap-3 font-bold" data-accordion-target="#accordion-color-body-3" aria-expanded="true" aria-controls="accordion-color-body-3">
-          <div>
-            <span class="md:text-sm text-2xl">サンプルタイトル</span>
-            <span class="md:text-xs text-base ml-[10px]">2025/04/01</span>
-          </div>
-          <Image data-accordion-icon src={arrow} alt='' height={20} width={20} class="md:w-[15px]" />
-        </button>
-      </p>
-      <div id="accordion-color-body-3" class="hidden font-light text-xl" aria-labelledby="accordion-color-heading-3">
-        <div class="p-5 md:pt-0 border border-t-0 border-gray-200 rounded-b-xl">
-          <p class="text-white md:text-xs pb-9">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
-        </div>
-      </div>
-    </li> -->
+      </li>
+    ))}
   </ul>
 </div>
-  
-  
-
