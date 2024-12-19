@@ -11,12 +11,12 @@ export function historySwiper() {
     centeredSlides: true,
     spaceBetween: 23,
     slidesPerView: 1.3,
-  
+
     pagination: {
       el: '#history .swiper-pagination',
       type: "progressbar",
     },
-  
+
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
