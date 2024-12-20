@@ -1,7 +1,7 @@
 ---
 import { fetchNewsContents } from '@/pages/news';
 const newsContents = await fetchNewsContents();
-import { formatDate } from '@/pages/utils';
+import { slashFormatDate } from '@/pages/utils';
 ---
 
 
@@ -13,7 +13,7 @@ import { formatDate } from '@/pages/utils';
           <button type="button" class="accordion-button md:py-[11px] flex items-center justify-between w-full p-5 rtl:text-right text-white border border-gray-200 rounded-xl gap-3 font-bold" data-accordion-target={`#accordion-color-body-${i+1}`} aria-expanded="true" aria-controls={`accordion-color-body-${i+1}`}>
             <div class="max-w-[95%] text-left flex items-baseline">
               <span class="accordion-title md:text-sm text-2xl block max-w-[90%] truncate">{content.title}</span>
-              <span class="md:text-xs text-base ml-[10px]">{formatDate(content.date)}</span>
+              <span class="md:text-xs text-base ml-[10px]">{slashFormatDate(content.date)}</span>
             </div>
             <img data-accordion-icon src='/src/assets/images/accordion-arrow.png' alt='' class="md:w-[15px] md:h-[15px] h-5 w-5" />
           </button>

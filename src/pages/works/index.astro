@@ -1,16 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets";
-import work1 from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_1.jpg'
-import work2 from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_2.jpg'
-import work3 from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_3.jpg'
-import work4 from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_4.jpg'
-import work5 from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_5.jpg'
-import work6 from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_6.jpg'
-import work7 from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_7.jpg'
-import work8 from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_8.jpg'
-import work9 from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_9.jpg'
-import work10 from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_10.jpg'
+import { fetchWorksContents } from '@/pages/fetchWorks';
+const works = await fetchWorksContents();
 
 const title = "作品一覧 | 稲門シナリオ研究会";
 const description = "稲門シナリオ研究会の映画作品一覧";
@@ -35,14 +26,18 @@ const og_image = ""; // TODO: cmsから画像のURLを取得
     </nav>
 
     <div class="flex flex-wrap">
-      <div class="relative group aspect-video w-[445px] hover:cursor-pointer">
-        <Image src={work1} alt="映画のサムネイル" class="w-full h-full object-cover" />
-        <div class="absolute text-base inset-0 bg-[#D9D9D9] bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col gap-[14px] items-center justify-center">
-          <p class="text-black">映画タイトル</p>
-          <p class="text-black">監督名</p>
+      {works.map((work: any) => (
+        <div class="relative group aspect-video w-[445px] hover:cursor-pointer">
+          <a href={`works/detail/${work.id}`}>
+            <img src={work.image.url} alt="映画のサムネイル" class="w-full h-full object-cover" />
+            <div class="absolute text-base inset-0 bg-[#D9D9D9] bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col gap-[14px] items-center justify-center">
+              <p class="text-black">{work.title}</p>
+              <p class="text-black">{work.director}</p>
+            </div>
+          </a>
         </div>
-      </div>
-      <div class="relative group aspect-video w-[445px] hover:cursor-pointer">
+      ))}
+      <!-- <div class="relative group aspect-video w-[445px] hover:cursor-pointer">
         <Image src={work2} alt="映画のサムネイル" class="w-full h-full object-cover" />
         <div class="absolute text-base inset-0 bg-[#D9D9D9] bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col gap-[14px] items-center justify-center">
           <p class="text-black">映画タイトル</p>
@@ -104,9 +99,11 @@ const og_image = ""; // TODO: cmsから画像のURLを取得
           <p class="text-black">映画タイトル</p>
           <p class="text-black">監督名</p>
         </div>
-      </div>
-      <div class="relative group aspect-video w-[445px] hover:cursor-pointer bg-[#131100] flex items-center justify-center">
-        <p class="text-white group-hover:underline">←TOPページへ戻る</p>
+      </div> -->
+      <div class="relative group aspect-video w-[445px] hover:cursor-pointer bg-[#131100]">
+        <a href="/" class="w-full h-full flex items-center justify-center">
+          <p class="text-white group-hover:underline">←TOPページへ戻る</p>
+        </a>
       </div>
     </div>
 	</main>

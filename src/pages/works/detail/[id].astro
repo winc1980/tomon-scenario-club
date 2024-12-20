@@ -1,7 +1,16 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import thumbnail from '@/assets/images/works-images/LINE_ALBUM_サムネ_240923_14.jpg';
-import { Image } from "astro:assets";
+import { jsFromatDate } from '@/pages/utils';
+import { fetchWorksContents, fetchWorksContentsById } from '@/pages/fetchWorks';
+const { params }: { params: { id: string } } = Astro;
+const work = await fetchWorksContentsById(params.id);
+
+export async function getStaticPaths() {
+  const works = await fetchWorksContents();
+  return works.map((work: any) => ({
+    params: { id: work.id },
+  }));
+}
 
 const title = "作品詳細 | 稲門シナリオ研究会";
 const description = "稲門シナリオ研究会が制作した映画の詳細です。";
@@ -33,32 +42,32 @@ const og_image = "";
 
     <div class="max-w-[1100px] mx-auto">
       <div class="overflow-hidden w-full max-h-[618px]">
-        <Image src={thumbnail} alt='映画のサムネイル' class='thumbnail block w-full' />
+        <img src={work.image.url} alt='映画のサムネイル' class='thumbnail block w-full' />
       </div>
       <section id="work-info" class="mt-[123px] mb-[255px]">
         <div class="detail-hidden flex gap-[101px] items-baseline max-w-[1006px] border-b-2 border-[#D9D9D9] pb-1 mb-[46px]">
-          <h2 class="text-4xl">ACARS</h2>
-          <p class="text-xl">202○年 ○月○○日公開</p>
+          <h2 class="text-4xl">{work.title}</h2>
+          <p class="text-xl">{`${jsFromatDate(work.workPublishedAt)}公開`}</p>
         </div>
   
         <section class="mb-[27px]">
           <h3 class="text-4xl font-medium mb-[18px]">作品説明</h3>
-          <p class="text-xl max-w-[960px]">作品説明サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプサンプルサンプルサンプルサンプルサンプルサンプルルサンプルサンプルサンプル</p>
+          <p class="text-xl max-w-[960px]">{work.description}</p>
         </section>
   
         <section class="mb-[27px]">
           <h3 class="text-4xl font-medium mb-[18px]">監督</h3>
-          <p class="text-xl max-w-[960px]">佐藤　太朗</p>
+          <p class="text-xl max-w-[960px]">{work.director}</p>
         </section>
   
         <section class="mb-[27px]">
           <h3 class="text-4xl font-medium mb-[18px]">出演</h3>
-          <p class="text-xl max-w-[960px]">田中　太朗、田中　太朗、田中　太朗、田中　太朗、田中　太朗、田中　太朗、田中　太朗</p>
+          <p class="text-xl max-w-[960px]">{work.performers}</p>
         </section>
   
         <section>
           <h3 class="text-4xl font-medium mb-[18px]">Youtube</h3>
-          <a href="/" class="underline [text-underline-offset:4px]">シナリオ研究会</a>
+          <a href={work.youtubeUrl} class="underline [text-underline-offset:4px]">シナリオ研究会</a>
         </section>
       </section>
     </div>
