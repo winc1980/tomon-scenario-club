@@ -4,7 +4,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export function historySwiper() {
+export async function historySwiper() {
+  const historyContents = await fetchHistoryContents();
+
+  if (!historyContents || historyContents.length === 0) {
+    console.error('History contents are empty.');
+    return;
+  }
+
   const swiper = new Swiper('#history-swiper', {
     modules: [Navigation, Pagination],
     direction: 'horizontal',
@@ -27,6 +34,19 @@ export function historySwiper() {
         spaceBetween: 31,
         slidesPerView: 3.3,
       }
+    }
+  });
+
+  swiper.on('slideChange', () => {
+    const currentIndex = swiper.realIndex;
+    const currentContent = historyContents[currentIndex];
+
+    const periodEl = document.getElementById('history-period');
+    const descriptionEl = document.getElementById('history-description');
+
+    if (currentContent && periodEl && descriptionEl) {
+      periodEl.textContent = currentContent.period || '';
+      descriptionEl.textContent = currentContent.explanation || '';
     }
   });
 }

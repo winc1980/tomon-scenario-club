@@ -140,10 +140,9 @@ const og_image = "";
         </div>
         <div class="swiper-pagination"></div>
       </div>
-      <!-- TODO: 画像の移動に合わせてテキストも変更する -->
       <div class="md:text-center md:text-xs md:mt-[43px] mt-[135px] max-w-[841px] box-content mx-auto px-14">
-        <p class="md:tracking-[4px] text-[#F5F5F5] text-xl font-bold tracking-[10px] mb-3">20世紀後期</p>
-        <p class="md:tracking-[4px] tracking-[20px]">大和屋竺や田中陽造らの映画人を輩出</p>
+        <p id="history-period" class="md:tracking-[4px] text-[#F5F5F5] text-xl font-bold tracking-[10px] mb-3">{historyContents[0].period}</p>
+        <p id="history-description" class="md:tracking-[4px] tracking-[20px]">{historyContents[0].explanation}</p>
       </div>
     </section>
 		<!-- HISTORY　ここまで -->
