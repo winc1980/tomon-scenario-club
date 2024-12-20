@@ -11,54 +11,54 @@ const og_image = "";
 <Layout title={title} , description={description} og_image={og_image}>
   <main>
     <!-- パンくずリスト -->
-    <nav class="flex mt-[57px] mb-[107px] mr-[140px] justify-end" aria-label="Breadcrumb">
+    <nav class="flex md:mt-[57px] mt-[26px] md:mb-[107px] mb-[21px] md:mr-[140px] ml-[20px] md:justify-end text-left" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
         <li class="inline-flex items-center">
-          <a href="/" class="inline-flex items-center leading-none text-xl text-white hover:border-b-2 border-white">
+          <a href="/" class="inline-flex items-center leading-none text-xs md:text-xl text-white hover:border-b-2 border-white">
             TOP
           </a>
         </li>
         <li aria-current="page" class="li-current__breadcrumb !ml-5 before:!-left-6">
-          <a href="/works" class="inline-flex items-center leading-none text-xl text-white hover:border-b-2 border-white">
+          <a href="/works" class="inline-flex items-center leading-none text-xs md:text-xl text-white hover:border-b-2 border-white">
             作品一覧
           </a>
         </li>
         <li aria-current="page" class="li-current__breadcrumb">
           <div class="flex items-center">
-            <span class="ms-4 text-xl text-white">作品詳細</span>
+            <span class="ms-4 text-xs md:text-xl text-white">作品詳細</span>
           </div>
         </li>
       </ol>
     </nav>
 
-    <div class="max-w-[1100px] mx-auto">
-      <div class="overflow-hidden w-full max-h-[618px]">
+    <div class="max-w-[1100px] mx-auto works_list">
+      <div class="overflow-hidden w-full max-h-[618px] mb-[25px]">
         <Image src={thumbnail} alt='映画のサムネイル' class='thumbnail block w-full' />
       </div>
-      <section id="work-info" class="mt-[123px] mb-[255px]">
-        <div class="detail-hidden flex gap-[101px] items-baseline max-w-[1006px] border-b-2 border-[#D9D9D9] pb-1 mb-[46px]">
-          <h2 class="text-4xl">ACARS</h2>
-          <p class="text-xl">202○年 ○月○○日公開</p>
+      <section id="work-info" class="md:mt-[123px] md:mb-[255px]">
+        <div class="detail-hidden md:flex gap-[101px] items-baseline max-w-[1006px] border-b-2 border-[#D9D9D9] pb-1 mb-[20px] md:mb-[46px]">
+          <h2 class="md:text-4xl text-xl title">ACARS</h2>
+          <p class="md:text-xl text-xs">202○年 ○月○○日公開</p>
         </div>
   
-        <section class="mb-[27px]">
-          <h3 class="text-4xl font-medium mb-[18px]">作品説明</h3>
-          <p class="text-xl max-w-[960px]">作品説明サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプサンプルサンプルサンプルサンプルサンプルサンプルルサンプルサンプルサンプル</p>
+        <section class="mb-[22px] md:mb-[27px]">
+          <h3 class="md:text-4xl text-base font-medium mb-[16px] md:mb-[18px]">作品説明</h3>
+          <p class="md:text-xl text-sm max-w-[960px]">作品説明サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプサンプルサンプルサンプルサンプルサンプルサンプルルサンプルサンプルサンプル</p>
         </section>
   
-        <section class="mb-[27px]">
-          <h3 class="text-4xl font-medium mb-[18px]">監督</h3>
-          <p class="text-xl max-w-[960px]">佐藤　太朗</p>
+        <section class="mb-[6px] md:mb-[27px]">
+          <h3 class="md:text-4xl text-base font-medium mb-[5px] md:mb-[18px]">監督</h3>
+          <p class="md:text-xl text-sm max-w-[960px]">佐藤　太朗</p>
         </section>
   
-        <section class="mb-[27px]">
-          <h3 class="text-4xl font-medium mb-[18px]">出演</h3>
-          <p class="text-xl max-w-[960px]">田中　太朗、田中　太朗、田中　太朗、田中　太朗、田中　太朗、田中　太朗、田中　太朗</p>
+        <section class="mb-[3px] md:mb-[27px]">
+          <h3 class="md:text-4xl text-base font-medium mb-[5px] md:mb-[18px]">出演</h3>
+          <p class="md:text-xl text-sm max-w-[960px]">田中　太朗、田中　太朗、田中　太朗、田中　太朗、田中　太朗、田中　太朗、田中　太朗</p>
         </section>
   
         <section>
-          <h3 class="text-4xl font-medium mb-[18px]">Youtube</h3>
-          <a href="/" class="underline [text-underline-offset:4px]">シナリオ研究会</a>
+          <h3 class="md:text-4xl text-base font-medium mb-[5px] md:mb-[18px]">Youtube</h3>
+          <a href="/" class="underline [text-underline-offset:4px] text-sm md:text-xl">シナリオ研究会</a>
         </section>
       </section>
     </div>

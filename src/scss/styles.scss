@@ -276,9 +276,9 @@ h1 {
 #history {
   .swiper-button-next,
   .swiper-button-prev {
-      --swiper-navigation-color: #F5F5F5; //ここに変更する色を指定
+    --swiper-navigation-color: #f5f5f5; //ここに変更する色を指定
   }
-  
+
   .swiper-horizontal > .swiper-pagination-progressbar,
   .swiper-pagination-progressbar.swiper-pagination-horizontal {
     width: 841px;
@@ -287,11 +287,11 @@ h1 {
     top: auto;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #6E6E6E;
+    background-color: #6e6e6e;
     border-radius: 10px;
 
     span {
-      background-color: #F5F5F5;
+      background-color: #f5f5f5;
       border-radius: 10px;
     }
   }
@@ -309,7 +309,7 @@ h1 {
 // 入会方法ここから
 #join {
   .join-title {
-    font-family: 'Zen Kaku Gothic New';
+    font-family: "Zen Kaku Gothic New";
   }
 }
 // 入会方法ここまで
@@ -318,7 +318,7 @@ h1 {
 #work-info {
   div {
     h2 {
-      font-family: 'Zen Kaku Gothic New';
+      font-family: "Zen Kaku Gothic New";
     }
   }
 }
@@ -336,3 +336,33 @@ h1 {
   transform: translateY(0);
 }
 // /works/detailここまで
+//作品一覧ここから
+.thumbnails {
+  justify-content: center;
+  margin: 0 20px;
+}
+.works_thumbnail {
+  max-width: 445px;
+  min-width: 200px;
+  width: 100%;
+  flex: 1 1 calc(33.33%);
+  max-width: calc(33.33%);
+}
+@media (max-width: 768px) {
+  .works_thumbnail {
+    flex: 1 1 calc(50%);
+    max-width: calc(50%);
+  }
+}
+//作品一覧ここまで
+//作品詳細ここから
+@media (max-width: 768px) {
+  .works_list {
+    margin: 0 20px;
+  }
+
+  .title {
+    text-align: left;
+  }
+}
+//作品詳細ここまで
