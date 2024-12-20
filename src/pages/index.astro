@@ -24,6 +24,8 @@ import { fetchHistoryContents } from '@/pages/history';
 const historyContents = await fetchHistoryContents();
 import { fetchEventsContents } from '@/pages/fetchEvents';
 const eventsContents = await fetchEventsContents();
+import { fetchAboutContents } from '@/pages/fetchAbout';
+const aboutContents = await fetchAboutContents();
 
 const title = "";
 const description = "";
@@ -160,23 +162,23 @@ const og_image = "";
           <tbody class="is-not-visible before:md:h-[35px] before:h-[66px] before:block">
             <tr class="border-b">
               <td class="md:text-xs md:font-semibold md:pb-[5px] pb-[15px] text-xl font-bold">サークル名</td>
-              <td class="md:text-xs md:pb-[5px] pb-[15px]">稲門シナリオ研究会</td>
+              <td class="md:text-xs md:pb-[5px] pb-[15px]">{aboutContents.clubName}</td>
             </tr>
             <tr class="border-b">
               <td class="md:text-xs md:font-semibold md:py-[5px] py-[15px] text-xl font-bold">人数</td>
-              <td class="md:text-xs">60人</td>
+              <td class="md:text-xs">{aboutContents.headcount}</td>
             </tr>
             <tr class="border-b">
               <td class="md:text-xs md:font-semibold md:py-[5px] py-[15px] text-xl font-bold">活動場所</td>
-              <td class="md:text-xs">早稲田大学戸山キャンパス学生会館6F E619</td>
+              <td class="md:text-xs">{aboutContents.place}</td>
             </tr>
             <tr class="border-b">
               <td class="md:text-xs md:font-semibold md:py-[5px] py-[15px] text-xl font-bold">会費</td>
-              <td class="md:text-xs">年間：4000円　半期：2500円</td>
+              <td class="md:text-xs">{aboutContents.fee}</td>
             </tr>
             <tr class="border-b">
               <td class="md:text-xs md:font-semibold md:py-[5px] py-[15px] text-xl font-bold">YouTube</td>
-              <td class="md:text-xs"><a class="underline">稲門シナリオ研究会</a></td>
+              <td class="md:text-xs"><a href={aboutContents.youtubeUrl} class="underline">{aboutContents.youtubeText}</a></td>
             </tr>
           </tbody>
         </table>
