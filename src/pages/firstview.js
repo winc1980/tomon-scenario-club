@@ -3,6 +3,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger); 
 gsap.to(".p-firstview_text", {
+
     scrollTrigger: {
       trigger: "#firstview", // アニメーションのトリガー要素
       start: "top top",      // ビューポートの開始位置
@@ -22,5 +23,5 @@ gsap.to(".p-firstview_background", {
     },
     autoAlpha: 0,
     y: -200, // 背景を上方向に移動
-  });
+});
 
