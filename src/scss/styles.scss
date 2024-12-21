@@ -472,3 +472,33 @@ h2 {
   transform: translateY(0);
 }
 // /works/detailここまで
+//作品一覧ここから
+.thumbnails {
+  justify-content: center;
+  margin: 0 20px;
+}
+.works_thumbnail {
+  max-width: 445px;
+  min-width: 200px;
+  width: 100%;
+  flex: 1 1 calc(33.33%);
+  max-width: calc(33.33%);
+}
+@media (max-width: 768px) {
+  .works_thumbnail {
+    flex: 1 1 calc(50%);
+    max-width: calc(50%);
+  }
+}
+//作品一覧ここまで
+//作品詳細ここから
+@media (max-width: 768px) {
+  .works_list {
+    margin: 0 20px;
+  }
+
+  .title {
+    text-align: left;
+  }
+}
+//作品詳細ここまで
