@@ -97,6 +97,65 @@ h2 {
     top: 50%;
     left: 50%;
     width: 100%;
+
+    div {
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 161px auto 0;
+
+      p {
+        font-size: 24px !important;
+        font-weight: normal !important;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          z-index: 10;
+          left: 50%;
+          bottom: -10px;
+          width: 15px;
+          height: 15px;
+          border-right: 2px solid #ffffff;
+          border-bottom: 2px solid #ffffff;
+          transform: translateX(-50%) rotate(45deg);
+        }
+      }
+
+      a {
+        font-size: 24px !important;
+        font-weight: normal !important;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          z-index: 10;
+          bottom: -5px;
+          width: 115%;
+          height: 1px;
+          background-color: #ffffff;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          z-index: 10;
+          right: -10px;
+          top: 55%;
+          width: 13px;
+          height: 13px;
+          transform: translateY(-50%) rotate(-45deg) skew(15deg, 15deg);
+          border-right: 1px solid #ffffff;
+          border-bottom: 1px solid #ffffff;
+        }
+      }
+    }
   }
 
   &_background {
@@ -119,7 +178,7 @@ h2 {
     margin-bottom: 50px;
   }
 
-  p {
+  p:nth-of-type(1) {
     font-weight: 700;
     font-size: 64px;
   }
@@ -130,26 +189,8 @@ h2 {
     display: flex;
     align-items: center;
 
-    &_triangle {
-      --b: 2px; /* control the border thickness */
-      width: 20px;
-      aspect-ratio: 1 / cos(30deg);
-      clip-path: polygon(
-        50% 100%,
-        100% 0,
-        0 0,
-        50% 100%,
-        50% calc(100% - var(--b)),
-        calc(var(--b) * cos(30deg)) calc(var(--b) / 2),
-        calc(100% - var(--b) * cos(30deg)) calc(var(--b) / 2),
-        50% calc(100% - var(--b))
-      );
-      background-color: $white;
-    }
-
-    p {
+    a {
       font-family: "Inter Variable", sans-serif;
-      font-weight: 700;
       font-size: 24px;
     }
   }
