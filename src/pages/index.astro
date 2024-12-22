@@ -229,6 +229,15 @@ const og_image = "";
     import { fetchInstagramPosts } from './instagram';
     fetchInstagramPosts();
 
+    // aboutのh3タグ(「SNS」)がaタグで動的にラップされてしまうので、そのaタグを削除する
+    const unwrap = (target: any) => {
+      while (target.firstChild) {
+        target.parentNode.insertBefore(target.firstChild, target);
+      }
+      target.remove();
+    };
+    unwrap(document.querySelector('#about > div:last-child > a'));
+
     function toggleTitleCss(index: number) {
       const button = document.querySelector(`#accordion-color-heading-${index} .accordion-button`);
       const title = document.querySelector(`#accordion-color-heading-${index} .accordion-title`);
