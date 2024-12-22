@@ -1,10 +1,10 @@
 export function detail() {
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     var scroll = window.scrollY;
     var windowHeight = window.innerHeight;
     var imgElement = document.querySelector('.thumbnail');
     const detailTitleEl = document.querySelector('.detail-hidden');
-    
+
     if (imgElement) {
       var scale = 1 + scroll / 600;
       imgElement.style.transform = `scale(${scale})`;
