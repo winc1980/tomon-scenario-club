@@ -10,16 +10,16 @@ const og_image = ""; // TODO: cmsから画像のURLを取得
 
 <Layout title={title} , description={description} og_image={og_image}>
 	<main class="max-w-[1335px] mx-auto">
-    <nav class="flex mt-[57px] mb-[60px] mr-[88px] justify-end" aria-label="Breadcrumb">
+    <nav class="md:mt-[26px] md:mb-[21px] md:mr-0 md:justify-start md:pl-5 flex mt-[57px] mb-[60px] mr-[88px] justify-end" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
         <li class="inline-flex items-center">
-          <a href="/" class="inline-flex items-center leading-none text-xl text-white hover:border-b-2 border-white">
+          <a href="/" class="md:text-xs inline-flex items-center leading-none text-xl text-white hover:border-b-2 border-white">
             TOP
           </a>
         </li>
-        <li aria-current="page" class="li-current__breadcrumb">
+        <li aria-current="page" class="li-current__breadcrumb before:!border-b before:!border-r">
           <div class="flex items-center">
-            <span class="ms-4 text-xl text-white">作品一覧</span>
+            <span class="md:text-xs ms-4 text-xl text-white">作品一覧</span>
           </div>
         </li>
       </ol>
