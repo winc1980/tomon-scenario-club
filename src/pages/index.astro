@@ -30,7 +30,7 @@ const og_image = "";
 	<main>
 		<!-- 作品一覧へ　ここから -->
          <section id="firstview" class="p-firstview">
-            <Firstview />
+            <!-- <Firstview /> -->
          </section>
 		<!-- 作品一覧へ　ここまで -->
 		<!-- NEWS　ここから -->
@@ -250,6 +250,20 @@ const accordionItems: AccordionItem[] = [
 
     const accordion = new Accordion(accordionElement, accordionItems, options, instanceOptions);
 
+    import $ from "jquery";
+    $(function() {
+	    var headerHeight = $('header').outerHeight(),
+		  startPos = 0;
+	    $(window).on('load scroll', function() {
+		    var scrollPos = $(this).scrollTop();
+		    if ( scrollPos! > startPos && scrollPos! > headerHeight! ) {
+			    $('header').css('top', '-' + headerHeight + 'px');
+		    } else {
+			    $('header').css('top', '0');
+		    }
+		  startPos = scrollPos!;
+	    });
+    });	
 	</script>
 
 </Layout>
