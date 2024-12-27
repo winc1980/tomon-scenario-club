@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -16,9 +15,6 @@ import '@fontsource-variable/inter';
 
 import { Image } from 'astro:assets';
 import activityImage from '@/assets/images/activity.png'
-import eventsImage1 from '@/assets/images/events1.png'
-import eventsImage2 from '@/assets/images/events2.png'
-import eventsImage3 from '@/assets/images/events3.png'
 
 import { fetchHistoryContents } from '@/pages/history';
 const historyContents = await fetchHistoryContents();
@@ -27,8 +23,8 @@ const eventsContents = await fetchEventsContents();
 import { fetchAboutContents } from '@/pages/fetchAbout';
 const aboutContents = await fetchAboutContents();
 
-const title = "";
-const description = "";
+const title = "稲門シナリオ研究会 | 早稲田大学映画研究サークル";
+const description = "早稲田大学の映画研究サークル。映画制作を中心に夏合宿やシナリオ講評会を行う。";
 const og_image = "";
 ---
 
@@ -323,6 +319,20 @@ const og_image = "";
 
     const accordion = new Accordion(accordionElement, accordionItems, options, instanceOptions);
 
+    import $ from "jquery";
+    $(function() {
+	    var headerHeight = $('header').outerHeight(),
+		  startPos = 0;
+	    $(window).on('load scroll', function() {
+		    var scrollPos = $(this).scrollTop();
+		    if ( scrollPos! > startPos && scrollPos! > headerHeight! ) {
+			    $('header').css('top', '-' + headerHeight + 'px');
+		    } else {
+			    $('header').css('top', '0');
+		    }
+		  startPos = scrollPos!;
+	    });
+    });	
 	</script>
 
 </Layout>
