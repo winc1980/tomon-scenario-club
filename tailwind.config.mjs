@@ -28,5 +28,4 @@ module.exports = {
 			md: { 'max': '768px' }
 		}
 	},
-
 }
